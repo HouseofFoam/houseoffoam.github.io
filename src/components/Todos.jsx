@@ -1,12 +1,17 @@
 import React from "react";
-import { useState } from "react";
 import TodoItem from "./TodoItem";
 
-function Todo({ todos }) {
+function Todo({ todos, toggleCompleted }) {
   return (
     <div style={styles.container}>
       {todos.map((todo) => {
-        return <TodoItem key={todo.id} todo={todo} />;
+        return (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            toggleCompleted={toggleCompleted}
+          />
+        );
       })}
     </div>
   );
