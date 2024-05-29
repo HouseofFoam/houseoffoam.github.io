@@ -1,5 +1,3 @@
-import React from "react";
-
 function TodoItem({ todo, toggleCompleted, deleteTodo }) {
   const todoTitleStyle = () => {
     if (todo.completed) {
