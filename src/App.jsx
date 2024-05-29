@@ -22,11 +22,21 @@ function App() {
     },
   ]);
 
+  const toggleCompleted = (todoId) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === todoId) {
+        todo.completed = !todo.completed;
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
+  };
+
   console.log(todos);
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>My Todo List</h1>
-      <Todo todos={todos} />
+      <Todo todos={todos} toggleCompleted={toggleCompleted} />
     </div>
   );
 }
